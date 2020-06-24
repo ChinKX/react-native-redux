@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { StyleSheet, View, TextInput, TouchableOpacity } from 'react-native'
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { connect } from 'react-redux';
+import { addTodo } from '../actions';
 
 class AddTodo extends Component {
   state = {
@@ -10,7 +11,8 @@ class AddTodo extends Component {
 
   addTodo = (text) => {
     // update redux store
-    this.props.dispatch({ type: 'ADD_TODO', text });
+    // this.props.dispatch({ type: 'ADD_TODO', text });
+    this.props.dispatch(addTodo(text));
     this.setState({ text: '' });
   }
 
